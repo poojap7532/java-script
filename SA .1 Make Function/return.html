@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return function</title>
+</head>
+<body>
+    <script>
+       function info() {
+            var data = {
+                name: "pooja patel",
+                age: "22",
+                phone: "+91 9033343443",
+                is_married: false,
+                aadhar_card: 259012765419,
+            }
+            var collegeInfo = {
+                college_name: "rnw institute"
+            }
+            return { data, ...collegeInfo }
+        }
+        var result = info()
+        console.log(result, 'result');
+
+    </script>
+</body>
+</html>

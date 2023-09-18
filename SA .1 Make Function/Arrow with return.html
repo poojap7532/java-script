@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow With Return Function</title>
+</head>
+
+<body>
+    <script>
+        // a=20, b=25 is param [ Arrow Function init ]
+        let arrowFunction = (a, b) => {
+            let data = {
+                total: a * b,
+                tota: a + b,
+                totl: a / b,
+            }
+
+            return data
+
+        }
+        // Invoke Function and pass param a=20, b=25
+        let total = arrowFunction(20, 25)
+        console.log(total, 'Arrow Function');
+
+
+    </script>
+</body>
+
+</html>
