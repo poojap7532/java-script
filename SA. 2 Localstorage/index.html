@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local data storage</title>
+</head>
+
+<body>
+    <script>
+        let data = {
+            name: "pooja",
+            age: "21",
+            phone: 9033343443,
+        };
+        let product = {
+            name: "wafers",
+            code: "908",
+            batch: 80,
+        };
+        let record = {
+            name: "chips",
+            code: "90",
+            batch: 8,
+        };
+
+        localStorage.setItem("user", JSON.stringify(data));
+        localStorage.setItem("product", JSON.stringify(product));
+        localStorage.setItem("record", JSON.stringify(record));
+
+        let userData = localStorage.getItem("record");
+        let userrecord = localStorage.getItem("user");
+        let userproduct = localStorage.getItem("product");
+
+        console.log("🚀 ~ file: index.html:21 ~ userData:", userData, userrecord, userproduct);
+
+    </script>
+</body>
+
+</html>
