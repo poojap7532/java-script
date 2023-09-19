@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal function</title>
+</head>
+
+<body>
+    <script>
+        // ============Make 20 to 30 function===========
+        // =====================1.normal function=========
+        // 1.
+        function calculation() {
+            var a = 100;
+            var b = 90;
+            var c = 100;
+            var d = 2000;
+            console.log(a * b * c * d);
+        }
+        calculation();
+        // 2.
+        function home() {
+            var hall;
+            var kitchen;
+            var drawing_room;
+            console.log("its my home");
+        }
+        home();
+        // 3.
+        function frontain() {
+            var html;
+            var css;
+            var boostrap;
+            var jquerry;
+            console.log("html,css,boostrap,jqueery is base of frontain");
+        }
+        frontain();
+        // 4.
+        function backend() {
+            var c;
+            var cpp;
+            var js;
+            console.log("c,cpp,js is base of backend");
+        }
+        backend();
+        // 5.
+        function developer() {
+            var full_stack;
+            var backend;
+            var frontain;
+            var designer;
+            console.log("development is skill base work");
+        }
+        developer();
+        // 6.
+        function number() {
+            var num1 = 20;
+            var num2 = 40;
+            console.log(num1 + num2);
+        }
+        number();
+
+        // =====================2.Arrow function=========
+        // 7.
+        var arrowFun = (c, d) => {
+        }
+        var result = (400 + 5000)
+        console.log(result, 'result')
+
+        // 8.
+        var arrowFun = (design, development) => {
+        }
+        var result = (2000 + 3000)
+        console.log(result, 'result');
+
+        // 9.
+        var arrowFun = (p, q) => {
+        }
+        var total = (70 * 20)
+        console.log(total, 'total');
+
+        // 10.
+        var arrowFun = (s, t) => {
+        }
+        var div = (4900 / 7)
+        console.log(div, 'div');
+
+        // 11.
+        var arrowFun = (u, v, w, x, y, z) => {
+        }
+        var cal = (100 + 200 - 200 * 10 / 100 + 20)
+        console.log(cal, 'cal');
+
+        // 12.
+        var arrowFun = (a, b, c, d, e, f, g, h) => {
+        }
+        var sum = (100 + 200 - 200 * 10 / 100 + 20 + 100 / 5)
+        console.log(sum, 'sum');
+
+
+        // =====================3.return function=========
+        // 13.
+        function data() {
+            var female = {
+                name: "pooja patel",
+                age: "22",
+                phone: "+91 9033343443",
+                is_married: false,
+                pan_card: 259012765419,
+            }
+            var instituteInfo = {
+                institute_name: "rnw institute"
+            }
+            return { female, ...instituteInfo }
+        }
+        var result = data()
+        console.log(result, 'result');
+
+        // 14.
+        function Data() {
+            var male = {
+                name: "pavan dave",
+                age: "23",
+                phone: "9924556789",
+                its_single: true,
+                entroll_number: 456788999,
+            }
+            var company_Info = {
+                company_name: "cyaza gold"
+            }
+            return { male, ...company_Info }
+        }
+        var result = Data()
+        console.log(result, 'result');
+
+
+        // 15.
+        function designer() {
+            var male = {
+                name: "maulik shrivastav",
+                age: "25",
+                phone: "9904154678",
+                its_married: true,
+                entroll_number: 276954322,
+            }
+            var company_Info = {
+                company_name: "scc llp"
+            }
+            return { male, ...company_Info }
+        }
+        var result = designer()
+        console.log(result, 'result');
+
+        // 16.
+        function android() {
+            var male = {
+                name: "yagnik vaddoriya",
+                age: "23",
+                phone: "7048454247",
+                its_married: false,
+                entroll_number: 276954322,
+            }
+            var company_Info = {
+                company_name: "vasundhra infotech"
+            }
+            return { male, ...company_Info }
+        }
+        var result = android()
+        console.log(result, 'result');
+
+
+        // =====================4.Multiline Arrow=========
+        // 17.
+        let multiply = (a, b) => { //a multiline function
+            let result = a * b;
+            return result;
+        };
+        console.log(multiply(2, 3));
+
+        // 18.
+        // a=4 and b=5 is param [ Arrow Function init ]
+        var arrowFun = (a, b) => {
+            var data = {
+                total: a * b,
+                tota: a * b,
+                totl: a * b,
+                toal: a * b,
+                ttal: a * b,
+                ta: a * b,
+                to: a * b
+            }
+            return data
+        }
+        // Invoke Function and pass param 4=a, 5=b
+        var total = arrowFun(4, 5)
+        console.log(total, 'Arrow Function');
+
+
+        // 19.
+        var welcome = () => {
+        }
+        console.log("Welcome to rnw!");
+        console.log("Welcome to rnw!");
+        console.log("Welcome to rnw!");
+        console.log("Welcome to rnw!");
+        welcome();
+
+        // 20.
+
+        var come = (a, b) => {
+        }
+
+        console.log("come back!");
+        console.log("plz come back!");
+
+        come();
+
+    </script>
+</body>
+
+</html>
