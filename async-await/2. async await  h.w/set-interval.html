@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set-interval</title>
+</head>
+
+<body>
+    <script>
+        // ======================->set interval ( 10 to 20 )==========================
+        // 1.
+        function aero1() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('recall')
+                }, 2000);
+            })
+        }
+        async function line1() {
+            console.log("i am new function!");
+            var result = await aero1()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line1()
+        }, 4000);
+
+        // 2.
+
+        function aero2() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('re-bug')
+                }, 2000);
+            })
+        }
+        async function line2() {
+            console.log("why not!");
+            var result = await aero2()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line2()
+        }, 4000);
+
+        // 3.
+        function aero3() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('return')
+                }, 2000);
+            })
+        }
+        async function line3() {
+            console.log("oh that's wrong!");
+            var result = await aero3()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line3()
+        }, 4000);
+
+        // 4.
+        function aero4() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('refound')
+                }, 2000);
+            })
+        }
+        async function line4() {
+            console.log("sure.......");
+            var result = await aero4()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line4()
+        }, 4000);
+
+        // 5.
+        function aero5() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('about us')
+                }, 2000);
+            })
+        }
+        async function line5() {
+            console.log("okay! sir");
+            var result = await aero5()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line5()
+        }, 4000);
+
+        // 6.
+        function aero6() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('once again exaplain')
+                }, 2000);
+            })
+        }
+        async function line6() {
+            console.log("yes!");
+            var result = await aero6()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line6()
+        }, 4000);
+
+        // 7.
+        function aero7() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('what are u doing?')
+                }, 2000);
+            })
+        }
+        async function line7() {
+            console.log("i complete my work!");
+            var result = await aero7()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line7()
+        }, 4000);
+
+        // 8.
+        function aero8() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('when uh come?')
+                }, 2000);
+            })
+        }
+        async function line8() {
+            console.log("At 8:00 p.m!");
+            var result = await aero8()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line8()
+        }, 4000);
+
+        // 9.
+        function aero9() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('save water!')
+                }, 2000);
+            })
+        }
+        async function line9() {
+            console.log("ohk...");
+            var result = await aero9()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line9()
+        }, 4000);
+
+        // 10.
+        function aero10() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('setitem')
+                }, 2000);
+            })
+        }
+        async function line10() {
+            console.log("getitem");
+            var result = await aero10()
+            console.log(result, 'result');
+        }
+        setInterval(() => {
+            line10()
+        }, 4000);
+    </script>
+</body>
+
+</html>
