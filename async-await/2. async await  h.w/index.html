@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>async-await</title>
+    <title>set timeout</title>
 </head>
 
 <body>
     <script>
-        // ======================-> make functions ( 10 to 20 )==========================
+        // ======================->set timeout ( 10 to 20 )==========================
         // 1.
         function calculation() {
             return new Promise((resolve) => {
@@ -185,64 +185,6 @@
             console.log(result, 'result');
         }
         Divided()
-        console.log("\n");
-        console.log("\n");
-
-
-        // ==================================setTimeout function=========================================
-        function single() {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve('recall')
-                }, 4000);
-            })
-        }
-        async function line() {
-            console.log("i am new function!");
-            var result = await single()
-            console.log(result, 'result');
-        }
-        line()
-        console.log("\n");
-        console.log("\n");
-
-
-        // ==================================setInterval function========================================
-        function aero() {
-            return new Promise((resolve) => {
-                setInterval(() => {
-                    resolve('re-set')
-                }, 5000);
-            })
-        }
-        async function Line() {
-            console.log("=> this is aero symbol...");
-            var result = await aero()
-            console.log(result, 'result');
-        }
-        Line()
-        console.log("\n");
-        console.log("\n");
-
-
-
-        // ==============================Auto call with interval function===============================
-        function Wait(){
-            return new Promise((resolve)=>{
-                setInterval(()=>{
-                    resolve('get')
-                },6000);
-            })
-        }
-        async function Getdata(){
-            console.log("sure.......");
-            var result = await Wait()
-            console.log(result,'result');
-        }
-        setInterval(()=>{
-            Getdata();
-        },6000);
     </script>
 </body>
-
 </html>
