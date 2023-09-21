@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async-await</title>
+</head>
+
+<body>
+    <script>
+        // ======================-> make functions ( 10 to 20 )==========================
+        // 1.
+        function calculation() {
+            return new Promise((resolve) => {
+                setInterval(() => {
+                    resolve('resolve')
+                }, 1000);
+            })
+        }
+        async function getData() {
+            console.log('calling.......');
+            var result = await calculation()
+            console.log(result, 'result');
+        }
+        getData()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 2.
+        function base() {
+            return new Promise((resolve) => {
+                setInterval(() => {
+                    resolve('recheck')
+                }, 2000);
+            })
+        }
+        async function find() {
+            console.log('say.......');
+            var result = await base()
+            console.log(result, 'result');
+        }
+        find()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 3.
+        function cube() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('refind')
+                }, 3000);
+            })
+        }
+        async function saw() {
+            console.log("hellooo guyss!.......");
+            var result = await cube()
+            console.log(result, 'result');
+        }
+        saw()
+        console.log("\n");
+        console.log("\n");
+
+        // 4.
+        function square() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('reget')
+                }, 4000);
+            })
+        }
+        async function slide() {
+            console.log("square has four slides,and four corner");
+            var result = await square()
+            console.log(result, 'result');
+        }
+        slide()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 5.
+        function triangle() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('retake')
+                }, 4000);
+            })
+        }
+        async function corner() {
+            console.log("triangle has three corner!!..");
+            var result = await triangle()
+            console.log(result, 'result');
+        }
+        corner()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 6.
+        function circle() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('remerge')
+                }, 4000);
+            })
+        }
+        async function Slide() {
+            console.log("circle has no any slides and corner,okay!");
+            var result = await circle()
+            console.log(result, 'result');
+        }
+        Slide()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 7.
+        function sub() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('rebought')
+                }, 4000);
+            })
+        }
+        async function min() {
+            console.log("hello world !!!!!!!...");
+            var result = await sub()
+            console.log(result, 'result');
+        }
+        min()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 8.
+        function add() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('re-add')
+                }, 3000);
+            })
+        }
+        async function plus() {
+            console.log("how are you? user.....");
+            var result = await add()
+            console.log(result, 'result');
+        }
+        plus()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 9.
+        function multi() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('remultiply')
+                }, 1000);
+            })
+        }
+        async function multiply() {
+            console.log("multiply two numbers.....");
+            var result = await multi()
+            console.log(result, 'result');
+        }
+        multiply()
+        console.log("\n");
+        console.log("\n");
+
+
+        // 10.
+        function div() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('redivide')
+                }, 4000);
+            })
+        }
+        async function Divided() {
+            console.log("divide two numbers......");
+            var result = await div()
+            console.log(result, 'result');
+        }
+        Divided()
+        console.log("\n");
+        console.log("\n");
+
+
+        // ==================================setTimeout function=========================================
+        function single() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('recall')
+                }, 4000);
+            })
+        }
+        async function line() {
+            console.log("i am new function!");
+            var result = await single()
+            console.log(result, 'result');
+        }
+        line()
+        console.log("\n");
+        console.log("\n");
+
+
+        // ==================================setInterval function========================================
+        function aero() {
+            return new Promise((resolve) => {
+                setInterval(() => {
+                    resolve('re-set')
+                }, 5000);
+            })
+        }
+        async function Line() {
+            console.log("=> this is aero symbol...");
+            var result = await aero()
+            console.log(result, 'result');
+        }
+        Line()
+        console.log("\n");
+        console.log("\n");
+
+
+
+        // ==============================Auto call with interval function===============================
+        function Wait(){
+            return new Promise((resolve)=>{
+                setInterval(()=>{
+                    resolve('get')
+                },6000);
+            })
+        }
+        async function Getdata(){
+            console.log("sure.......");
+            var result = await Wait()
+            console.log(result,'result');
+        }
+        setInterval(()=>{
+            Getdata();
+        },6000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
