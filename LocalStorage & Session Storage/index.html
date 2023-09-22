@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorage & Session Storage </title>
+</head>
+
+<body>
+</body>
+<script>
+
+  var data = {
+    user: "Pooja Patel",
+    age: 21,
+    phone: 9033343443
+  }
+  sessionStorage.setItem('Pooja', JSON.stringify("data"))
+
+  let getdata = JSON.parse(sessionStorage.getItem("'Pooja'"))
+
+  console.log(getdata);
+</script>
+
+</html>
