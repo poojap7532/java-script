@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+
+<body>
+</body>
+<script>
+    //====================== min ( 10 to 20 Example with Dif Method )======================
+
+    // 1.
+    var name = 'pooja'
+    var globalVar = 10;
+    //  globalvariable initialize.....
+
+    function shop() {
+        console.log(name, '20 line');
+    }
+    shop()
+
+    var name = "yagnik"
+    console.log(name, '15 line');
+
+    console.log("\n");
+
+    // 2.
+    function testVar() {
+        // local variable initialize.......
+
+        let insideTest = 11
+        console.log(insideTest, 'insideTest');
+    }
+    testVar()
+    console.log("\n");
+
+    // 3.
+    var subject = 'maths'
+    var globalVar = 20;
+    //  globalvariable initialize.....
+
+    function Shop() {
+        console.log(subject, 'subject');
+    }
+    Shop()
+    console.log("\n");
+
+    // 4.
+    var user = 'rohit sharma'
+    var globalvar = 21;
+    // global variable initilize.......
+
+    function Child() {
+        console.log(user, 'user');
+    }
+    Child()
+    console.log("\n");
+
+    // 5.
+    function book() {
+        // local variable initialize.......
+
+        let index = "html"
+        console.log(index, 'index');
+    }
+    book()
+    console.log("\n");
+
+    // 6.
+    var event = 'Diwali'
+    var month = 11;
+    // global variable initilize.......
+
+    function fest() {
+        console.log(month, 'diwali festival');
+    }
+    fest()
+    console.log("\n");
+
+    // 7.
+    function company() {
+        // local variable initialize.......
+
+        let institute = "RNW multimedia"
+        console.log(institute, 'institute');
+    }
+    company()
+    console.log("\n");
+
+    // 8.
+    var vacation = 'summer'
+    var Month = 'April';
+    // global variable initilize.......
+
+    function holiday() {
+        console.log(Month, 'summer vacation');
+    }
+    holiday()
+    console.log("\n");
+
+    // 9.
+    function Title() {
+        // local variable initialize.......
+
+        let slogan = "Happy Ganesh chaturthi"
+        console.log(slogan, '-slogan');
+    }
+    Title()
+    console.log("\n");
+
+    // 10.
+    var skill = 'full-stack developer'
+    var develop = 'skill design';
+    // global variable initilize.......
+
+    function Skill() {
+        console.log(skill, ' pooja patel');
+    }
+    Skill()
+    console.log("\n");
+
+
+
+
+
+
+
+
+</script>
+
+</html>
