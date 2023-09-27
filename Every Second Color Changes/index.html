@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Every Second Color Changes</title>
+</head>
+
+<body>
+    <button onclick="Rnwdata('Pooja','Kachhadiya')">Google Login</button>
+    <button onclick="removeData()">Remove Google Login</button>
+    <button onclick="changeColor()">Change Color on click</button>
+    <p id="count"></p>
+    <h1 id="pooja"></h1>
+</body>
+<script>
+    function Rnwdata(fname, lname) {
+        let fullname = fname + " " + lname
+        document.getElementById('pooja').innerHTML = fullname
+    }
+    function removeData() {
+        document.getElementById('pooja').innerHTML = ''
+    }
+
+    function changeColor() {
+        let data = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+        document.getElementById('pooja').style.color = data
+    }
+    setInterval(() => {
+        changeColor()
+    }, 1000);
+
+
+</script>
+
+</html>
