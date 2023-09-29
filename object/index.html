@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const mobile = { type: "oppo", model: "A77s", color: "black", price: 20000, addres: '' };
+    console.log(mobile.model, 'Model Name');
+    console.log(mobile.color, 'mobile Color');
+    console.log(mobile.price ?? 'not added', 'mobile Price');
+    console.log(mobile.address ?? 'not added', 'mobile address');
+
+    let mobiles = [
+        { type: "oppo", model: "A77s", color: "black" },
+        { type: "samsung", model: "S23", color: "white" },
+        { type: "one-plus", model: "11R", color: "sky-blue" },
+    ]
+
+    let onemobile = mobiles[1].type ?? "---"
+    console.log(onemobile);
+
+    console.log(window.navigator.onLine);
+    console.log(window);
+
+</script>
+
+</html>
