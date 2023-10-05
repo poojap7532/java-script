@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-validation</title>
+</head>
+
+<body>
+    <input id="fname" type="text" placeholder="Enter Your FullName">
+    <input id="address" type="text" placeholder="Enter Your Address">
+    <input id="age" type="number" placeholder="Enter Your Age">
+    <input id="job" type="text" placeholder="Enter Your Job">
+    <input id="phone" type="number" placeholder="Enter Your Phone No">
+    <input id="Country" type="text" placeholder="Enter Your Country">
+    <button onclick="submitform()">submitted</button>
+    <p id="error" style="color: red;"></p>
+
+    <hr />
+    <p>User information</p>
+    <button onclick="getUserdata()">Get User Data</button>
+    <p id="test_fname"></p>
+    <p id="test_address"></p>
+    <p id="test_age"></p>
+    <p id="test_job"></p>
+    <p id="test_phone"></p>
+    <p id="test_country"></p>
+</body>
+
+<script>
+    function submitform() {
+        var Fname = document.getElementById('fname').value
+        var Address = document.getElementById('address').value
+        var Age = document.getElementById('age').value
+        var Job = document.getElementById('job').value
+        var Phone = document.getElementById('phone').value
+        var Country = document.getElementById('Country').value
+
+        try {
+            if (Fname && Address && Age && Job && Phone && Country) {
+                alert('FORM SUBMITTED!...............')
+                document.getElementById('error').innerHTML = ' '
+                var userData = {
+                    userName: Fname,
+                    Address,
+                    Age,
+                    Job,
+                    Phone,
+                    Country
+                }
+                localStorage.setItem('userInformation', JSON.stringify(userData))
+            } else {
+                throw 'please fill this form'
+            }
+        }
+        catch (error) {
+            document.getElementById('error').innerHTML = error
+        }
+    }
+
+    function getUserdata() {
+        let userData = JSON.parse(localStorage.getItem('userInformation'))
+        document.getElementById('test_fname').innerHTML = userData.userName ?? 'Something went to wrong'
+        document.getElementById('test_address').innerHTML = userData.Address ?? 'Something went to wrong'
+        document.getElementById('test_age').innerHTML = userData.Age ?? 'Something went to wrong'
+        document.getElementById('test_job').innerHTML = userData.Job ?? 'Something went to wrong'
+        document.getElementById('test_phone').innerHTML = userData.Phone ?? 'Something went to wrong'
+        document.getElementById('test_country').innerHTML = userData.Country ?? 'Something went to wrong'
+    }
+</script>
+
+</html>
