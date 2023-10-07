@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Vs String Methods</title>
+</head>
+
+<body>
+</body>
+<script>
+    // ...............................Array Method Example............................................
+    // 1.pop
+    var chocolate = ["silk", "kitkat", "5-star", "Dairy-milk", "fuse", "snakers", "amul-dark chocolate"];
+    chocolate.pop();
+    console.log(chocolate, 'pop');
+
+    // 2.push
+    chocolate.push("galaxy")
+    console.log(chocolate, 'push');
+
+    // 3.unshift
+    chocolate.unshift("forero rochero")
+    console.log(chocolate, 'unshift');
+
+    // 4.shift
+    chocolate.shift("silk")
+    console.log(chocolate, 'shift');
+
+    // 5.slice
+    var choc = chocolate.slice(5, 8)
+    console.log(choc, 'slice');
+
+    // 6.splice
+    var cho = chocolate.splice(0, 1)
+    console.log(cho, 'splice');
+
+
+    // ...............................string Method Example............................................
+    // 1.toUpperCase
+    var text1 = "Hello World!";
+    var text2 = text1.toUpperCase();
+    console.log(text2, 'toUpperCase');
+
+    // 2.toLowerCase
+    var text3 = "YES I'M.."
+    var text4 = text3.toLowerCase();
+    console.log(text4, 'toLowerCase');
+
+    // 3.toLocalLowerCase
+    var text5 = "MAY I COME IN?";
+    var text6 = text5.toLocaleLowerCase();
+    console.log(text6, 'toLocalLowerCase');
+
+    // 4.toLocalUpperCase
+    var text7 = "not data found";
+    var text8 = text7.toLocaleUpperCase();
+    console.log(text8, 'toLocalUpperCase');
+
+</script>
+
+</html>
