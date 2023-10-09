@@ -6,28 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form-validation</title>
 </head>
+<style>
+    input {
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+        background-color: rgb(221, 209, 231);
+        font-size: 15px;
+    }h1 {
+        color: rgb(196, 189, 203);
+    }.container {
+        text-align: center;
+        width: 1320px;
+        background-color: rgb(89, 93, 97);
+    }p {
+        font-size: 18px;
+        color: rgb(239, 231, 246);
+    }button {
+        background-color: antiquewhite;
+        padding: 10px;
+        border: aliceblue;
+        font-size: 15px;
+        color: rgb(83, 83, 75);
+        font-weight: 500;
+    }
+</style>
 
 <body>
-    <input id="fname" type="text" placeholder="Enter Your FullName">
-    <input id="address" type="text" placeholder="Enter Your Address">
-    <input id="age" type="number" placeholder="Enter Your Age">
-    <input id="job" type="text" placeholder="Enter Your Job">
-    <input id="phone" type="number" placeholder="Enter Your Phone No">
-    <input id="Country" type="text" placeholder="Enter Your Country">
-    <button onclick="submitform()">submitted</button>
-    <p id="error" style="color: red;"></p>
-
-    <hr />
-    <p>User information</p>
-    <button onclick="getUserdata()">Get User Data</button>
-    <p id="test_fname"></p>
-    <p id="test_address"></p>
-    <p id="test_age"></p>
-    <p id="test_job"></p>
-    <p id="test_phone"></p>
-    <p id="test_country"></p>
+    <div class="container">
+        <h1>Form Validation</h1>
+        <input id="fname" type="text" placeholder="Enter Your FullName"><br><br>
+        <input id="address" type="text" placeholder="Enter Your Address"><br><br>
+        <input id="age" type="number" placeholder="Enter Your Age"><br><br>
+        <input id="job" type="text" placeholder="Enter Your Job"><br><br>
+        <input id="phone" type="number" placeholder="Enter Your Phone No"><br><br>
+        <input id="Country" type="text" placeholder="Enter Your Country"><br><br>
+        <button onclick="submitform()">submitted</button>
+        <p id="error" style="color: red;"></p>
+        <hr />
+        <p>User information</p>
+        <button onclick="getUserdata()">Get User Data</button>
+        <p id="test_fname"></p>
+        <p id="test_address"></p>
+        <p id="test_age"></p>
+        <p id="test_job"></p>
+        <p id="test_phone"></p>
+        <p id="test_country"></p>
+    </div>
 </body>
-
 <script>
     function submitform() {
         var Fname = document.getElementById('fname').value
@@ -36,7 +62,6 @@
         var Job = document.getElementById('job').value
         var Phone = document.getElementById('phone').value
         var Country = document.getElementById('Country').value
-
         try {
             if (Fname && Address && Age && Job && Phone && Country) {
                 alert('FORM SUBMITTED!...............')
@@ -58,7 +83,6 @@
             document.getElementById('error').innerHTML = error
         }
     }
-
     function getUserdata() {
         let userData = JSON.parse(localStorage.getItem('userInformation'))
         document.getElementById('test_fname').innerHTML = userData.userName ?? 'Something went to wrong'
