@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Trip Calculator</title>
+</head>
+
+<body>
+    <h1>Trip Cost Calculator</h1>
+    <div class="container">
+        <label>Distance: <input type="number" id="dis"></label><br /><br />
+        <label>Price of fuel: <input type="number" id="price"></label><br /><br />
+        <label>Persons: <input type="number" id="person"></label><br /><br />
+        <label>Consumption: <input type="number" id="con"></label><br /><br />
+        <label>Fixed Costs: <input type="number" id="cost"></label><br /><br />
+        <label>Variable Costs: <input type="number" id="variable"></label><br /><br />
+        <button onclick="submitform()">Calculate</button>
+        <p id="error" style="color: red;"></p>
+
+    </div>
+</body>
+<style>
+    .container {
+        width: 100%;
+        text-align: center;
+        background-color: rgb(118, 121, 158);
+    }
+
+    h1 {
+        text-align: center;
+        text-decoration: dotted;
+        color: rgb(111, 111, 227);
+    }
+
+    label {
+        font-size: 25px;
+        font-weight: 500;
+        color: rgb(245, 243, 239);
+    }
+
+    input {
+        font-weight: 900;
+    }
+
+    button {
+        font-size: 20px;
+        background-color: rgb(4, 4, 223);
+        color: azure;
+        padding: 10px;
+        margin: 20px;
+        border: 10px rgb(111, 111, 227);
+    }
+</style>
+<script>
+    function submitform() {
+        var Distance = document.getElementById('dis').value
+        var Price_of_fuel = document.getElementById('price').value
+        var Persons = document.getElementById('person').value
+        var Consumption = document.getElementById('con').value
+        var Fixed_Costs = document.getElementById('cost').value
+        var Variable_Costs = document.getElementById('variable').value
+    }
+    try {
+        if (Distance && Price_of_fuel && Persons && Consumption && Fixed_Costs && Variable_Costs) {
+            alert('FORM SUBMITTED!...............')
+            document.getElementById('error').innerHTML = ' '
+            var userData = {
+                userName: Distance,
+                Price_of_fuel,
+                Persons,
+                Consumption,
+                Fixed_Costs,
+                Variable_Costs
+            }
+            localStorage.setItem('userInformation', JSON.stringify(userData))
+        } else {
+            throw 'please fill this form'
+        }
+    }
+    catch (error) {
+        document.getElementById('error').innerHTML = error
+    }
+
+</script>
+
+</html>
