@@ -6,83 +6,59 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Trip Calculator</title>
 </head>
-
-<body>
-    <h1>Trip Cost Calculator</h1>
-    <div class="container">
-        <label>Distance: <input type="number" id="dis"></label><br /><br />
-        <label>Price of fuel: <input type="number" id="price"></label><br /><br />
-        <label>Persons: <input type="number" id="person"></label><br /><br />
-        <label>Consumption: <input type="number" id="con"></label><br /><br />
-        <label>Fixed Costs: <input type="number" id="cost"></label><br /><br />
-        <label>Variable Costs: <input type="number" id="variable"></label><br /><br />
-        <button onclick="submitform()">Calculate</button>
-        <p id="error" style="color: red;"></p>
-
-    </div>
-</body>
 <style>
     .container {
-        width: 100%;
+        width: 1300px;
         text-align: center;
-        background-color: rgb(118, 121, 158);
+        background-color: bisque;
     }
 
     h1 {
-        text-align: center;
-        text-decoration: dotted;
-        color: rgb(111, 111, 227);
+        color: rgb(23, 22, 21);
+        font-size: 40px;
     }
 
-    label {
-        font-size: 25px;
-        font-weight: 500;
-        color: rgb(245, 243, 239);
-    }
-
-    input {
-        font-weight: 900;
+    lable {
+        color: rgb(7, 7, 8);
+        font-size: 20px;
+        font-weight: 700;
     }
 
     button {
-        font-size: 20px;
-        background-color: rgb(4, 4, 223);
-        color: azure;
-        padding: 10px;
-        margin: 20px;
-        border: 10px rgb(111, 111, 227);
+        border: 2px solid rgb(203, 108, 108);
+        border-radius: 5px;
+        color: rgb(120, 27, 27);
+        background-color: whitesmoke;
     }
 </style>
+
+<body>
+    <div class="container">
+        <h1>Trip Cost Calculator</h1>
+        <lable>Distance (km):</lable>
+        <input type="number" id="distance" value="100" /> <br /><br />
+
+        <lable>Price of fuel (cents per litre):</lable>
+        <input type="number" id="price" value="150" /><br /><br />
+
+        <lable>Litres per 100 km:</lable>
+        <input type="number" id="litres" /><br /><br />
+
+        <lable>Trip Cost:</lable>
+        <input type="number" id="cost" readonly><br /><br />
+
+        <!-- Click On btn and Invoke function -->
+        <button onclick="submitcost()">GET TOTAL COST OF TRIP</button>
+    </div>
+</body>
 <script>
-    function submitform() {
-        var Distance = document.getElementById('dis').value
-        var Price_of_fuel = document.getElementById('price').value
-        var Persons = document.getElementById('person').value
-        var Consumption = document.getElementById('con').value
-        var Fixed_Costs = document.getElementById('cost').value
-        var Variable_Costs = document.getElementById('variable').value
-    }
-    try {
-        if (Distance && Price_of_fuel && Persons && Consumption && Fixed_Costs && Variable_Costs) {
-            alert('FORM SUBMITTED!...............')
-            document.getElementById('error').innerHTML = ' '
-            var userData = {
-                userName: Distance,
-                Price_of_fuel,
-                Persons,
-                Consumption,
-                Fixed_Costs,
-                Variable_Costs
-            }
-            localStorage.setItem('userInformation', JSON.stringify(userData))
-        } else {
-            throw 'please fill this form'
-        }
-    }
-    catch (error) {
-        document.getElementById('error').innerHTML = error
-    }
+    function submitcost() {
+        var Distance = document.getElementById("distance").value
+        var Price_of_fuel = document.getElementById("price").value
+        var Litres = document.getElementById("litres").value
+        var Trip_Cost = ((Litres * Price_of_fuel) / 100) * Distance
 
+        document.getElementById("cost").value = Trip_Cost
+    }
 </script>
-
 </html>
