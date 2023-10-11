@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown App</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .countdown {
+        width: 100%;
+        height: 100vh;
+        background: url('img/banner01.jpg')center;
+        background-size: cover;
+        background-color: rgb(160, 160, 168);
+        text-align: center;
+    }
+
+    h1 {
+        color: whitesmoke;
+    }
+
+    h2 {
+        color: rgb(92, 9, 9);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+            Geneva, Verdana, sans-serif;
+    }
+
+    p {
+        font-size: 20px;
+        color: rgb(74, 7, 7);
+    }
+
+    input {
+        font-size: 20px;
+        color: rgb(21, 21, 19);
+        border-radius: 10%;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        background-color: whitesmoke;
+    }
+
+    label {
+        font-size: 30px;
+        color: rgb(83, 71, 71);
+    }
+</style>
+
+<body>
+    <div class="countdown">
+        <div class="data">
+            <h1>THE BIGGEST FESTIVAL....!!!</h1><br />
+            <h2>Diwali Come in soon...</h2><br />
+            <p id="end-date"></p>
+
+            <div class="box">
+                <div>
+                    <input type="number" id="days" readonly value="0">
+                    <br />
+                    <label>Days</label>
+                </div>
+                <div>
+                    <input type="number" id="hours" readonly value="0">
+                    <br />
+                    <label>Hours</label>
+                </div>
+                <div>
+                    <input type="number" id="min" readonly value="0">
+                    <br />
+                    <label>Minutes</label>
+                </div>
+                <div>
+                    <input type="number" id="second" readonly value="0">
+                    <br />
+                    <label>Seconds</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let endDate = "13 November 2023 12:00 AM"
+    document.getElementById("end-date").innerText = endDate;
+
+    function startCountDown() {
+        let end = new Date(endDate);
+        let now = new Date();
+        let change = (end - now) / 1000
+
+        if (change < 0) {
+            return;
+        }
+        let days = Math.floor(change / 3600 / 24); // convert into days;
+        document.getElementById("days").value = days
+
+        let hours = Math.floor(change / 3600) % 24; // convert into hours;
+        document.getElementById("hours").value = hours
+
+        let minute = Math.floor(change / 60) % 60; // convert into minutes;
+        document.getElementById("min").value = minute
+
+        let second = Math.floor(change) % 60; // convert into seconds;
+        document.getElementById("second").value = second
+    }
+
+    // 1 day = 24 hrs
+    // 1 hr = 60 mins
+    // 60 min = 3600 sec
+
+    // startCountDown();
+
+    setInterval(() => {
+        startCountDown()
+    }, 1000);
+</script>
+
+</html>
