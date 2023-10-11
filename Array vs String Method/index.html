@@ -6,36 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Methods Vs String Methods</title>
 </head>
-
 <body>
 </body>
 <script>
     // ...............................Array Method Example............................................
-    // 1.pop
-    var chocolate = ["silk", "kitkat", "5-star", "Dairy-milk", "fuse", "snakers", "amul-dark chocolate"];
-    chocolate.pop();
-    console.log(chocolate, 'pop');
+    var number = [1, 2, 3, 4, 5]
 
-    // 2.push
-    chocolate.push("galaxy")
-    console.log(chocolate, 'push');
+    // 1.push
+    number.push(8, 9, 10)
+    console.log(number, 'Push Method');
 
-    // 3.unshift
-    chocolate.unshift("forero rochero")
-    console.log(chocolate, 'unshift');
+    // 2.pop
+    number.pop()
+    console.log(number, 'Pop Method');
 
-    // 4.shift
-    chocolate.shift("silk")
-    console.log(chocolate, 'shift');
+    // 3.shift
+    number.shift()
+    console.log(number, 'shift method');
 
-    // 5.slice
-    var choc = chocolate.slice(5, 8)
-    console.log(choc, 'slice');
+    // 4. unshift
+    number.unshift(10)
+    console.log(number, 'Unshift method');
 
-    // 6.splice
-    var cho = chocolate.splice(0, 1)
-    console.log(cho, 'splice');
+    // 5.map
+    const name = ["pooja", "riya", "pavan", "priyal", "harshit"];
 
+    const result = name.map((data) => data);
+    console.log(result, 'map method');
+
+    // 6.concate
+    let array = [11, 12, 13]
+    let concate = number.concat(array)
+    console.log(concate, 'concate method');
+
+    // 7.slice
+    number.slice(14, 15)
+    console.log(number, 'Slice method');
+
+    // 8.splice
+    number.splice(10, 0, 4, 5)
+    console.log(number, 'splice method');
+
+    // 9.reverse
+    number.reverse()
+    console.log(number, 'reverse method');
+
+    // 10.tostring
+    number.toString()
+    console.log(number, 'tostring method');
+
+    //11.length
+    number.length
+    console.log(number, 'array length');
 
     // ...............................string Method Example............................................
     // 1.toUpperCase
@@ -58,6 +80,25 @@
     var text8 = text7.toLocaleUpperCase();
     console.log(text8, 'toLocalUpperCase');
 
-</script>
+    // 5. string length
+    var text9 = "Android Developmet";
+    console.log(text9.length, 'string length');
 
+    // 6.trim method (it remove whitespace)
+    console.log(text8.trim(), 'trim method');
+
+    // 7.replace method
+    var text10 = "shruti gajera";
+    console.log(text10.replace("gajera", "patel"), 'replace method');
+
+    // 8.charAt method 
+    var text11 = "Nodejs"
+    console.log(text11.charAt(4), "charAt Method");
+
+    // 9. indexOf method
+    console.log(text10.indexOf('r'), "IndexOf MEthod");
+
+    //10.charCodeAt (used to find out the Unicode value of a character at the specific index in a string)
+    console.log(text9.charCodeAt(7), "charCodeAt");
+</script>
 </html>
