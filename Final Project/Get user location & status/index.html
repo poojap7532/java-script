@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #status {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <p>User Location: <span id="location"></span></p>
+    <p>User Status: <span id="status"></span></p>
+
+    <script>
+        // Function to get the user's location
+        function getUserLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const locationElement = document.getElementById("location");
+                    locationElement.textContent = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+                });
+            } else {
+                alert("Geolocation is not available in your browser.");
+            }
+        }
+
+        // Function to check user's online status
+        function checkUserOnlineStatus() {
+            const statusElement = document.getElementById("status");
+            if (navigator.onLine) {
+                statusElement.style.backgroundColor = "green";
+            } else {
+                statusElement.style.backgroundColor = "red";
+            }
+        }
+
+        // Initial calls to get location and check online status
+        getUserLocation();
+        checkUserOnlineStatus();
+
+        // Listen for online/offline events
+        window.addEventListener("online", checkUserOnlineStatus);
+        window.addEventListener("offline", checkUserOnlineStatus);
+    </script>
+</body>
+</html>
