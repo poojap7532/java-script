@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Cost Management</title>
+</head>
+<style>
+    .container {
+        width: 1300px;
+        text-align: center;
+        background-color: rgb(49, 32, 11);
+        border: 1px #dd0606 dotted;
+        border-radius: 20%;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 45px;
+    }
+
+    label {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    button {
+        border: 2px solid rgb(203, 108, 108);
+        border-radius: 5px;
+        color: rgb(120, 27, 27);
+        background-color: whitesmoke;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Event Cost Management</h1>
+        <label>Select Event Name:</label>
+        <select>
+            <option value="">Event Name : </option>
+            <option value="Wedding">Wedding</option>
+            <option value="Engagment">Engagment</option>
+            <option value="baby-shower">Baby-shower</option>
+            <option value="Meetup">Meetup</option>
+            <option value="haldi">Haldi</option>
+            <option value="cricket">cricket</option>
+            <option value="Award"> Award</option>
+            <option value="sangeet">Sangeet-night</option>
+            <option value="navratri">Navratri</option>
+        </select><br /><br />
+        <label>Enter Members Number:</label>
+        <input type="number" id="memberNumber" /><br /><br />
+        <label>Dish Price:</label>
+        <input type="number" id="dishPrice" /><br /><br />
+        <label>Discount ( 10 % ):</label>
+        <input type="number" id="discount" /><br /><br />
+        <label>Advanced:</label>
+        <input type="number" id="advanced" /><br /><br />
+        <label>Event Cost:</label>
+        <input type="number" id="cost" readonly><br /><br />
+        <!-- Click On btn and Invoke function (Onclick Invoke Function) -->
+        <button onclick="EventCost()">GET TOTAL COST OF EVENT</button>
+    </div>
+</body>
+<script>
+    function EventCost() {
+        let memberNumber = document.getElementById('memberNumber').value
+        let dishPrice = document.getElementById('dishPrice').value
+        let discount = document.getElementById('discount').value
+        let advanced = document.getElementById('advanced').value
+        let price = memberNumber * dishPrice
+        let dis = (price * discount) / 100
+        let totalCost = price - dis - advanced;
+
+        try {
+            if (memberNumber && dishPrice && discount && advanced) {
+                let price = memberNumber * dishPrice
+                let dis = (price * discount) / 100
+                let totalCost = price - dis - advanced;
+
+                document.getElementById('cost').value = totalCost;
+            }
+            else {
+                throw 'Please Fill The Details'
+            }
+        }
+        catch {
+            alert('Please Fill Details')
+        }
+
+    }
+</script>
+
+</html>

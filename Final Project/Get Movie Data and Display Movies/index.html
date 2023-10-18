@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Movie Data and Display Movies</title>
+</head>
+<style>
+    .box {
+        width: 300px;
+        height: 400px;
+        margin: 20px;
+        text-align: center;
+        border: 1px solid #171010;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        display: inline-block;
+    }
+
+    img {
+        width: 100%;
+        height: 50%;
+        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    }
+
+    .btn {
+        border: 1px solid whitesmoke;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        text-align: center;
+        padding: 15px;
+        width: 500px;
+        margin: 50px auto;
+    }
+
+    button {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border: 3px solid rgb(159, 152, 152);
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <div class="btn">
+        <h2>Click On Button To Get Data</h2>
+        <button onclick="getMovieData()">Get Products Data</button>
+    </div>
+    <div id="container"></div>
+</body>
+<script>
+    async function getMovieData() {
+        let response = await fetch("https://dummyjson.com/products")
+        let movies = await response.json();
+        console.log(movies.products);
+        // movies.products.map(x => document.getElementById('box').innerHTML += x.title + '</br>' + x.brand)
+        movies.products.map(x => {
+            let box = document.createElement("div");
+            box.classList.add("box");
+
+            let img = document.createElement("img");
+            img.src = x.thumbnail;
+            img.classList.add("img");
+
+            let Id = document.createElement("h4");
+            Id.classList.add("id");
+            Id.textContent = "ID: " + x.id;
+
+            let title = document.createElement("h3");
+            title.classList.add("title");
+            title.textContent = "Name : " + x.title.charAt(0).toUpperCase() + x.title.slice(1);
+
+            let price = document.createElement("h4");
+            price.classList.add("price");
+            price.textContent = "Price : " + x.price;
+
+            let rating = document.createElement("h5")
+            rating.classList.add('rating');
+            rating.textContent = 'rating : ' + x.rating
+
+            box.appendChild(img);
+            box.appendChild(Id);
+            box.appendChild(title);
+            box.appendChild(price);
+            box.appendChild(rating)
+            container.appendChild(box);
+        })
+    }
+    // getMovieData();
+</script>
+
+</html>
