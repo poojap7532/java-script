@@ -7,120 +7,88 @@
     <title>To Do List</title>
 </head>
 <style>
-    .container {
-        width: 100%;
-        background-color: #191027;
-        height: 100vh;
-        text-align: center;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(194, 189, 189);
     }
 
     h1 {
-        color: #ffff;
+        text-align: center;
+        color: #fff;
+        background-color: #c85e5e;
     }
 
-    input {
-        font-size: 20px;
-        margin: 15px;
-        width: 60%;
+    #taskInput {
+        width: 33%;
+        padding: 19px;
+        border-radius: 7%;
+        margin-left: 31%;
+        margin-top: 41px;
+    }
+
+    #addTaskButton {
         padding: 10px;
-        background-color: #120722;
-        color: whitesmoke;
-        border: 1px solid #200648;
-        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     }
 
-    button {
-        font-size: large;
-        margin-left: 10px;
-        padding: 7px;
-        border: 1px solid #1a102a;
-        border-radius: 10px;
-        color: whitesmoke;
-        background-color: #120722;
+    #taskList {
+        list-style: none;
+        padding: 0;
+    }
+
+    #taskList li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #181515;
+        border-radius: 17px;
+        margin: 19px 0;
+        padding: 15px;
+        width: 37%;
+        margin-left: 31%;
+        background-color: #fff
+    }
+
+    #taskList li span {
+        flex-grow: 1;
+    }
+
+    #taskList li button {
+        background-color: #ff0000;
+        color: #080606;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: #fff;
     }
 </style>
 
 <body>
-    <div class="container">
-        <h1>TO DO LIST</h1>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <input type="text" id="taskInput" placeholder="Add a task">
-        <button onclick="addTask()">Add Task</button>
-        <!-- <input type="text" id="txt2" placeholder="Add a text">
-        <input type="text" id="txt3" placeholder="Add a text">
-        <input type="text" id="txt4" placeholder="Add a text">
-        <input type="text" id="txt5" placeholder="Add a text"> -->
-        <ul id="taskList"></ul>
-
-        <!-- <p id="error" style="color: red;"></p> -->
-
-
-       
-    </div>
+    <h1>Simple To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTaskButton">Add Task</button>
+    <ul id="taskList"></ul>
 </body>
 <script>
-   function addTask(){
-     const taskInput = document.getElementById("taskInput");
+    const taskInput = document.getElementById("taskInput");
+    const addTaskButton = document.getElementById("addTaskButton");
+    const taskList = document.getElementById("taskList");
+
+    addTaskButton.addEventListener("click", function () {
         const taskText = taskInput.value.trim();
-
-        if (taskText !== "") {
-            // Retrieve existing tasks from local storage
-            const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
-            // Add the new task
-            existingTasks.push(taskText);
-
-            // Update local storage with the new tasks
-            localStorage.setItem("tasks", JSON.stringify(existingTasks));
-
-            // Clear the input field
-            taskInput.value = "";
-
-            // Refresh the task list
-            displayTasks();
+        if (taskText === "") {
+            alert("Please enter a task!");
+            return;
         }
-   }
-    // Function to display tasks from local storage on the page
-    function displayTasks() {
-        const taskList = document.getElementById("taskList");
-        const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        const newTask = document.createElement("li");
+        newTask.innerHTML = `<span>${taskText}</span>
+                <button onclick="removeTask(this)">Remove</button>`;
+        taskList.appendChild(newTask);
+        taskInput.value = "";
+    });
 
-        // Clear the existing task list
-        taskList.innerHTML = "";
-
-        // Loop through the tasks and display them
-        // existingTasks.forEach();
-        existingTasks.map((task, id) => {
-            const li = document.createElement("li");
-            li.textContent = task;
-
-            // Add a delete button for each task
-            const deleteButton = document.createElement("button");
-            deleteButton.textContent = "Delete Record";
-            deleteButton.onclick = () => deleteTask(id);
-
-            li.appendChild(deleteButton);
-            taskList.appendChild(li);
-        })
+    function removeTask(button) {
+        taskList.removeChild(button.parentElement);
     }
-
-    // Function to delete a task from local storage and update the display
-    function deleteTask(id) {
-        const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-        if (id >= 0 && id < existingTasks.length) {
-            // Remove the task at the specified index
-            existingTasks.splice(id, 1);
-
-            // Update local storage with the modified tasks
-            localStorage.setItem("tasks", JSON.stringify(existingTasks));
-
-            // Refresh the task list
-            displayTasks();
-        }
-    }
-
-    // Initialize the task list when the page loads
-    displayTasks();
 </script>
 
 </html>
