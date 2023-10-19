@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date function</title>
 </head>
+
 <body>
-    
 </body>
 <script>
-// 1.
-var birthday = new Date('June 9, 2001 23:15:30');
-var date1 = birthday.getDate();
-console.log(date1);
+    // ==========================date function======================
+    // 1.
+    var birthday = new Date('June 9, 2001 23:15:30');
+    var date1 = birthday.getDate();
+    console.log(date1, 'Date');
 
-// 2.
-var birthday = new Date('August 20, 2023 23:15:30');
-var date2 = birthday.getDay();
-console.log(date2);
+    // 2.
+    var date2 = birthday.getDay();
+    console.log(date2, 'Day');
+
+    // 3.
+    var date3 = birthday.getMinutes();
+    console.log(date3, 'Minutes');
+
+    // 4.
+    var date4 = birthday.getFullYear();
+    console.log(date4, 'Year');
+
+    // 5.
+    var date5 = birthday.getMilliseconds();
+    console.log(date5, 'Miliseconds');
+
+    // 6.
+    var date6 = birthday.getHours();
+    console.log(date6, 'Hours');
+
+    // 7.
+    var date7 = birthday.getTimezoneOffset();
+    console.log(date7, 'TimezoneOffset');
+
+    // 8.
+    var date8 = birthday.getMonth();
+    console.log(date8, 'Month');
+
+    // 9.
+    var date9 = birthday.getSeconds();
+    console.log(date9, 'Second');
+
+    // 10.
+    var date10 = birthday.getUTCDay();
+    console.log(date10, 'UTCDay');
 </script>
+
 </html>
