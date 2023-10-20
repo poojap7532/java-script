@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fetch Data and Print in html</title>
+</head>
+<body>
+    <h1 id="main"></h1>
+</body>
+<script>
+    async function products() {
+        var response = await fetch('https://dummyjson.com/products');
+        console.log(response.status, 'first');
+        var all = await response.json();
+        if (response.status == 200) {
+            console.log(all);
+        }
+        else {
+            console.log('res not found');
+        }
+        
+    }
+    
+    products()
+</script>
+</html>
